@@ -1,11 +1,12 @@
-var gulp = require("gulp");
-var browserify = require("browserify");
-var source = require("vinyl-source-stream");
-var tsify = require("tsify");
-var sourcemaps = require("gulp-sourcemaps");
-var buffer = require("vinyl-buffer");
-var paths = {
-    pages: ["src/*.html"],
+const gulp = require("gulp");
+const browserify = require("browserify");
+const source = require("vinyl-source-stream");
+const tsify = require("tsify");
+const sourcemaps = require("gulp-sourcemaps");
+const buffer = require("vinyl-buffer");
+const moment = require("moment");
+const paths = {
+    pages: ["src/*.html", "src/*.css"],
 };
 gulp.task("copy-html", function () {
     return gulp.src(paths.pages).pipe(gulp.dest("dist"));
